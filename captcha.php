@@ -5,7 +5,6 @@
  * Date: 16/11/26
  * Time: 下午5:04
  */
-
 namespace captcha;
 
 
@@ -47,10 +46,10 @@ class captcha
         $this->createCode();
         for ($i=0; $i<$this->num; $i++)
         {
-            $font_size = mt_rand(5,10);
-            $this->font = 'ttf/arial.ttf';
-            $x = ($this->width / $this->num) * $i + 2;
-            $y = mt_rand(10,$this->height-30);
+            $font_size = mt_rand(13,17);
+            $this->font = '/ttf/Luminari.ttf';
+            $x = ($this->width / $this->num) * $i + 5;
+            $y = mt_rand(15,$this->height-5);
             $color = imagecolorallocate($this->img, mt_rand(0,100), mt_rand(0,100), mt_rand(0,100));
 //            imagechar($this->img, $font_size, $x, $y, $this->code[$i], $color);
             imagettftext($this->img, $font_size, mt_rand(-45,45), $x, $y, $color, $this->font, $this->code[$i]);
