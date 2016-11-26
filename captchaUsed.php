@@ -8,7 +8,6 @@
 
 //session_start();
 include_once 'captcha.php';
-
 $captcha = new \captcha\captcha();
 $captcha->showCaptcha();
 

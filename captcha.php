@@ -17,6 +17,7 @@ class captcha
     private $height;
     private $img;
     private $code;
+    private $font;
 
     function __construct()
     {
@@ -46,10 +47,13 @@ class captcha
         $this->createCode();
         for ($i=0; $i<$this->num; $i++)
         {
-            $font = mt_rand(3,5);
-            $color = imagecolorallocate($this->img, mt_rand(0,255), mt_rand(0,255), mt_rand(0,255));
-            imagechar($this->img, $font, ($this->width / $this->num) * $i, mt_rand(10,$this->height-30), $this->code[$i], $color);
-
+            $font_size = mt_rand(5,10);
+            $this->font = 'ttf/arial.ttf';
+            $x = ($this->width / $this->num) * $i + 2;
+            $y = mt_rand(10,$this->height-30);
+            $color = imagecolorallocate($this->img, mt_rand(0,100), mt_rand(0,100), mt_rand(0,100));
+//            imagechar($this->img, $font_size, $x, $y, $this->code[$i], $color);
+            imagettftext($this->img, $font_size, mt_rand(-45,45), $x, $y, $color, $this->font, $this->code[$i]);
         }
     }
 
