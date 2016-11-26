@@ -1,19 +1,19 @@
-## captcha
-# captcha.php
+# captcha
+## captcha.php
 
 > 这是PHP类
 
 
-# captchaUsed.php
+## captchaUsed.php
 
 > 调用chaptcha.php文件
 
 
-# captcha.html
+## captcha.html
 
 > 测试网页
 
 
-# ttf
+## ttf
 
 > 字体文件
